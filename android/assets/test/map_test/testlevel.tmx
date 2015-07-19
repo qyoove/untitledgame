@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="32" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Game Boy Advance - Pokemon FireRed LeafGreen - Tileset2" tilewidth="32" tileheight="32" spacing="2" margin="2">
+  <tileoffset x="2" y="2"/>
+  <image source="Game Boy Advance - Pokemon FireRed LeafGreen - Tileset2.png" width="954" height="1600"/>
+  <terraintypes>
+   <terrain name="dirt" tile="-1"/>
+   <terrain name="grass" tile="-1"/>
+  </terraintypes>
+  <tile id="6" terrain="1,1,1,1">
+   <properties>
+    <property name="animated" value="grass"/>
+    <property name="grass" value="1"/>
+    <property name="interval" value="1.0"/>
+   </properties>
+  </tile>
+  <tile id="34" terrain="1,1,1,1">
+   <properties>
+    <property name="animated" value="grass"/>
+    <property name="grass" value="2"/>
+    <property name="interval" value="1.0"/>
+   </properties>
+  </tile>
+  <tile id="35" terrain="1,1,1,1">
+   <properties>
+    <property name="animated" value="grass"/>
+    <property name="grass" value="3"/>
+    <property name="interval" value="1.0"/>
+   </properties>
+  </tile>
+  <tile id="62" terrain="1,1,1,1"/>
+  <tile id="168" terrain="0,0,0,0"/>
+  <tile id="169" terrain="1,0,1,0"/>
+  <tile id="170" terrain="0,1,0,1"/>
+  <tile id="171" terrain="1,1,0,0"/>
+  <tile id="172" terrain="0,0,1,1"/>
+  <tile id="197" terrain="1,0,1,1"/>
+  <tile id="198" terrain="0,1,1,1"/>
+  <tile id="199" terrain="1,1,1,0"/>
+  <tile id="200" terrain="1,1,0,1"/>
+  <tile id="225" terrain="0,0,0,1"/>
+  <tile id="226" terrain="0,0,1,0"/>
+  <tile id="227" terrain="0,1,0,0"/>
+  <tile id="228" terrain="1,0,0,0"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztVUFOAzEMNFz2IfY/8lWu7cI3gH6D0n+wh1gahnG6FaqERA6jRBvb43gcr5uZT0xMTEz8Oywdra9Bq8M+7UKcRz9rsA+I6+Tv4OvkG4UtcjmdB3E0yj1ErGa6HphzUEzmYb7FdK5s1wp+zjk5sB6smdOe4zT6hnflejw82tM9gBzVvb3zv2/rs8Cp0CKh/E49JvJn/Sr+47Z+bHgBnDespnsv82G/9EF+1fuKfwWNlh57tZ9vJIRNxjoS/2Jj/RU/xxrNkrQJwY99P3p/yf8J+t3Kn7Xl+1ezR/EfOjKPC+wrsM1F6D/iVvy3YtR/rH2l/6t97/29SL5r/Ve9PTddq7241v/c85X+v+Hfq//o/jjfUKf8H2DuOE+Vbm8Qk/+B1f3vOf8n/ha+AFEp9Pw=
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwSgYBTAgDsQSA2i/MRCbkKnXgQr2+wNxABDnkKiPVPWjgPqgfYDtXzyAdo+mv1EwCogDANBhA+Q=
+  </data>
+ </layer>
+ <objectgroup name="interact" width="32" height="32" visible="0">
+  <object type="prompt" x="288" y="672" width="32" height="32">
+   <properties>
+    <property name="message" value="&quot;chess piece? a fallic object? i dunno, i just wanted to put it here...&quot;"/>
+   </properties>
+  </object>
+  <object type="prompt" x="672" y="672" width="32" height="32">
+   <properties>
+    <property name="message" value="this is a savepoint bebies"/>
+   </properties>
+  </object>
+  <object type="prompt" x="672" y="832" width="32" height="32">
+   <properties>
+    <property name="message" value="this is an npc talking."/>
+   </properties>
+  </object>
+  <object type="dialog" x="704" y="800" width="32" height="32">
+   <properties>
+    <property name="file" value="test.dlg"/>
+   </properties>
+  </object>
+  <object type="savepoint" x="704" y="640" width="64" height="32"/>
+  <object type="savepoint" x="736" y="576" width="32" height="64"/>
+  <object type="savepoint" x="704" y="576" width="32" height="32"/>
+  <object type="savepoint" x="672" y="576" width="32" height="64"/>
+ </objectgroup>
+ <objectgroup name="highsprites" width="32" height="32">
+  <object x="480" y="672">
+   <properties>
+    <property name="file" value="tree"/>
+   </properties>
+  </object>
+  <object x="544" y="832">
+   <properties>
+    <property name="file" value="tree"/>
+   </properties>
+  </object>
+  <object x="352" y="832">
+   <properties>
+    <property name="file" value="tree"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="special" width="32" height="32" visible="0">
+  <object name="spawn" x="295" y="754"/>
+ </objectgroup>
+ <objectgroup name="collision" width="32" height="32">
+  <object x="224" y="608" width="64" height="64"/>
+  <object x="288" y="640" width="32" height="32"/>
+  <object x="672" y="640" width="32" height="32"/>
+  <object x="704" y="608" width="32" height="32"/>
+  <object x="672" y="800" width="32" height="32"/>
+  <object x="704" y="768" width="32" height="32"/>
+  <object x="480" y="672"/>
+  <object x="480" y="640" width="32" height="32"/>
+  <object x="544" y="800" width="32" height="32"/>
+ </objectgroup>
+</map>
