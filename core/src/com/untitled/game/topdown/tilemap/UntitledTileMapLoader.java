@@ -1,6 +1,8 @@
 package com.untitled.game.topdown.tilemap;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.assets.loaders.FileHandleResolver;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.maps.MapLayer;
@@ -15,6 +17,7 @@ import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileSet;
 import com.badlogic.gdx.maps.tiled.TiledMapTileSets;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import com.badlogic.gdx.maps.tiled.TmxMapLoader.Parameters;
 import com.badlogic.gdx.maps.tiled.tiles.AnimatedTiledMapTile;
 import com.badlogic.gdx.maps.tiled.tiles.StaticTiledMapTile;
 import com.badlogic.gdx.math.Rectangle;
@@ -23,14 +26,21 @@ import com.badlogic.gdx.utils.ObjectMap;
 
 public class UntitledTileMapLoader
 {
+	TmxMapLoader loader;
+	
+	public UntitledTileMapLoader(FileHandleResolver resolver)
+	{
+		loader = new TmxMapLoader(resolver);
+	}
+	
 	public UntitledTileMap load(String fileName,String highSpritePackFile)
 	{
-		TiledMap map = new TmxMapLoader().load(fileName);
+		TiledMap map = loader.load(fileName);
 		
 		loadAnimatedTiles(map);
 		
 		Array<Sprite> highSprites = new Array<Sprite>();	
-		TextureAtlas atlas = new TextureAtlas(Gdx.files.internal(highSpritePackFile));
+		TextureAtlas atlas = new TextureAtlas(loader.resolve((highSpritePackFile)));
 		
 		loadHighSprites(highSprites, atlas, map);		
 		

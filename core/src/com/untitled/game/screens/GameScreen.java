@@ -3,6 +3,7 @@ package com.untitled.game.screens;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -29,7 +30,7 @@ public class GameScreen implements Screen
 	public void show()
 	{;
 		camera = new OrthographicCamera(640,320);
-		map = new UntitledTileMapLoader().load("test/map_test/testlevel.tmx", "test/highsprite_test-packed/pack.atlas");
+		map = new UntitledTileMapLoader(new InternalFileHandleResolver()).load("test/map_test/testlevel.tmx", "test/highsprite_test-packed/pack.atlas");
 		player = new TopDownPlayer(map.getTiledMap());
 		map.addSprite(player.playerSprite);
 		renderer = new UntitledTileMapRendererWithSprites(map);
